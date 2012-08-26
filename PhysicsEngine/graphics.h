@@ -65,7 +65,17 @@ public:
 	void DrawPixel(int x, int y, int color) {
     	if (x < 0 || x >= W || y < 0 || y >= H) return;
 		y = H - y - 1;
-		*((Uint32 *)screen->pixels + (y * screen->pitch >> 2) + x) = color;
+		
+		int r = color >> 16;
+		int g = (color >> 8) & 0xff;
+		int b = color & 0xff;
+
+		* (int*) ( (char*)screen->pixels
+				+ y*screen->pitch
+				+ x*screen->format->BytesPerPixel )
+			= (r << screen->format->Rshift)
+			+ (g << screen->format->Gshift)
+			+ (b << screen->format->Bshift);
     }
 	void DrawLine(int x0, int y0, int x1, int y1, int color);
     void DrawRect(int x, int y, int w, int h, int color);

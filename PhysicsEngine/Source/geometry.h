@@ -4,6 +4,7 @@
 #include <cmath>
 #include <cassert>
 #include "constants.h"
+#define hypot _hypot
 
 inline int sgn(double x) {
 	if (x < -eps) return -1;
@@ -46,15 +47,15 @@ struct Vector2D {
 		return x * vec.y - y * vec.x;
 	}
 	void Normalize() {
-		double r = 1. / _hypot(x, y);
+		double r = 1. / hypot(x, y);
 		x *= r, y *= r;
 	}
 	Vector2D GetDirection() const {
-		double r = 1. / _hypot(x, y);
+		double r = 1. / hypot(x, y);
 		return Vector2D(x * r, y * r, 0);
 	}
 	double GetLength() const {
-		return _hypot(x, y);
+		return hypot(x, y);
 	}
 	double GetLength2() const {
 		return x * x + y * y;

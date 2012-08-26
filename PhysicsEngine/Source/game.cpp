@@ -97,10 +97,10 @@ void Game::Run() {
 			case 7:
 			case 8:
 			case 9:
-				block = new Polygon(Polygon::GeneratePolygon(shapeId, 80));
+				block = new Polygon(Polygon::GeneratePolygon(shapeId, 50));
 				break;
 			case 0:
-				block = new Circle(Circle::GenerateCircle(80));
+				block = new Circle(Circle::GenerateCircle(50));
 				break;
 			default :
 				break;

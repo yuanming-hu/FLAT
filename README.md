@@ -1,3 +1,5 @@
+# This project is now part of [Taichi](https://github.com/IteratorAdvance/taichi).
+
 # FLAT
 A 2D rigid body physics engine written from scratch in C++.
 

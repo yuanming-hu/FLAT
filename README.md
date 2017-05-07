@@ -1,4 +1,4 @@
-# This project is now part of [Taichi](https://github.com/IteratorAdvance/taichi).
+# This project is (obsolete) highschool project. I am now integrating it into [Taichi](https://github.com/yuanming-hu/taichi).
 
 # FLAT
 A 2D rigid body physics engine written from scratch in C++.
